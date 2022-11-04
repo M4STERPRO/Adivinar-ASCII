@@ -1,0 +1,46 @@
+#include <stdio.h>
+#include <stdio_ext.h>
+
+void adivinar_simbolo (char caracter);
+
+int main()
+{
+    char caracter, eleccion;
+    
+    printf("Bienvenido al juego de adivinanzas de números en ASCII" "\n");
+    do{
+        printf("Inserte un caracter cualquiera: ");
+        __fpurge(stdin);
+        scanf("%c", &caracter);
+        printf("Ahora inserte el número que usted considere como valor en ASCII: ");
+        adivinar_simbolo(caracter);
+        printf("Si desea volver a jugar inserte 1, de lo contrario terminará el programa" "\n");
+        __fpurge(stdin);
+        scanf("%c", &eleccion);
+    }while (eleccion =='1');
+    printf("Gracias por elegir y jugar con el programa!");
+
+    return 0;
+}
+
+void adivinar_simbolo (char caracter)
+{
+    int ASCII, intentos = 0;
+    do{
+        scanf("%d", &ASCII);
+        __fpurge(stdin);
+        intentos++;
+        if (caracter < ASCII){
+            printf("El valor ingresado en la tabla ASCII es menor, inténtelo denuevo" "\n");
+        }else if (caracter > ASCII){
+            printf("El valor ingresado en la tabla ASCII es mayor, inténtelo denuevo" "\n");
+        }
+    }while (caracter != ASCII);
+    printf("Perfecto! Has encontrado el número" "\n");
+    if (intentos == 1){
+        printf("Lo has intentado %d vez" "\n", intentos);
+    }else{
+        printf("Lo has intentado %d veces" "\n", intentos);
+        
+    }
+}
