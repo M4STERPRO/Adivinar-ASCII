@@ -44,3 +44,4 @@ void adivinar_simbolo (char caracter)
         
     }
 }
+
