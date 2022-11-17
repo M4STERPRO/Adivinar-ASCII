@@ -38,7 +38,7 @@ void adivinar_simbolo (char caracter)
     }while (caracter != ASCII);
     printf("Perfecto! Has encontrado el número" "\n");
     if (intentos == 1){
-        printf("Lo has intentado %d vez" "\n", intentos);
+        printf("Lo has intentado %d veces" "\n", intentos);
     }else{
         printf("Lo has intentado %d veces" "\n", intentos);
         
